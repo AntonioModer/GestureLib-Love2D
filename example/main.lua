@@ -4,11 +4,11 @@ require "lib/GestureLib/Tap"
 
 
 function love.load()
-	SwipeN = Swipe('[TP,N,TR]', -1, 500);
-	SwipeS = Swipe('[TP,S,TR]', -1, 500);
-	SwipeLDC = Swipe('[TP,S,E,TR]', -1, 800);
-	gLongPress = LongPress(1000);
-	gTap = Tap(2,600);
+	Gesture_SwipeN = Swipe('[TP,N,TR]', -1, 500);
+	Gesture_SwipeS = Swipe('[TP,S,TR]', -1, 0);
+	Gesture_SwipeLDC = Swipe('[TP,S,E,TR]', -1, 800);
+	Gesture_LongPressGesture = LongPress(1000);
+	Gesture_DoubleTap = Tap(2,600);
 end
 
 function love.draw()
@@ -17,43 +17,44 @@ end
   
 
 function love.update(dt)
-	SwipeN:update();
-	SwipeS:update();
-	SwipeLDC:update();
-	gLongPress:update();
-	gTap:update();
-			
-	if SwipeN:Check() == true then
-			print("WORK N")
+	Gesture_SwipeN:update();
+	Gesture_SwipeS:update();
+	Gesture_SwipeLDC:update();
+	Gesture_LongPressGesture:update();
+	Gesture_DoubleTap:update();
+		
+	if Gesture_SwipeN:Check() == true then
+		print("Gesture_SwipeN")
 	end
-	if SwipeS:Check() == true then
-			print("WORK S")
+	if Gesture_SwipeLDC:Check() == true then
+			print("Gesture_SwipeLDC")
+
 	end
-	if SwipeLDC:Check() == true then
-			print("WORK LDC")
+	if Gesture_LongPressGesture:Check() == true then
+			print("Gesture_LongPressGesture")
+			if Gesture_SwipeS:Check() == true then
+				print("Gesture_SwipeS")
+			end
 	end
-	if gLongPress:Check() == true then
-			print("WORK LongPress")
-	end
-	if gTap:Check() == true then
-			print("WORK gTap")
+	if Gesture_DoubleTap:Check() == true then
+			print("Gesture_DoubleTap")
 	end
 end
 
  
 
 function love.mousepressed(x, y, button, istouch)
-	SwipeN.mousepressed(x, y, button, istouch);
-	SwipeS.mousepressed(x, y, button, istouch);
-	SwipeLDC.mousepressed(x, y, button, istouch);
-	gLongPress.mousepressed(x, y, button, istouch);
-	gTap.mousepressed(x, y, button, istouch);
+	Gesture_SwipeN.mousepressed(x, y, button, istouch);
+	Gesture_SwipeS.mousepressed(x, y, button, istouch);
+	Gesture_SwipeLDC.mousepressed(x, y, button, istouch);
+	Gesture_LongPressGesture.mousepressed(x, y, button, istouch);
+	Gesture_DoubleTap.mousepressed(x, y, button, istouch);
 end
 
 function love.mousereleased(x, y, button, istouch)
-	SwipeN.mousereleased(x, y, button, istouch)
-	SwipeS.mousereleased(x, y, button, istouch)
-	SwipeLDC.mousereleased(x, y, button, istouch);
-	gLongPress.mousereleased(x, y, button, istouch);
-	gTap.mousereleased(x, y, button, istouch);
+	Gesture_SwipeN.mousereleased(x, y, button, istouch)
+	Gesture_SwipeS.mousereleased(x, y, button, istouch)
+	Gesture_SwipeLDC.mousereleased(x, y, button, istouch);
+	Gesture_LongPressGesture.mousereleased(x, y, button, istouch);
+	Gesture_DoubleTap.mousereleased(x, y, button, istouch);
 end
