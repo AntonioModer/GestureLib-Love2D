@@ -6,17 +6,17 @@ function Tap(a,t)
 		@param	t	minimal time
 	]]--
 	local self = GestureLib();
-
 	
 	self.gestureCheck = '[';
 	for i = 1, a do
-		if (i == a) then
+		if i == a then
 			self.gestureCheck = self.gestureCheck .. 'TP,TR';
 		end
-		if (i ~= a) then
+		if i ~= a then
 			self.gestureCheck = self.gestureCheck .. 'TP,TR,';
 		end
 	end
+	
 	self.gestureCheck = self.gestureCheck .. "]";	
 	self.minTime = t;
 	self.timer = 0;		
@@ -25,7 +25,7 @@ function Tap(a,t)
 		if button == 1 then
 			self.gesturing = true;
 			self.gesturesBuffer = 'TP';
-			if (self.timer >= self.minTime) then
+			if self.timer >= self.minTime then
 				for k,v in pairs(self.gestures) do self.gestures[k]=nil end
 			end
 			self.nowTime = love.timer.getTime() * 1000;
@@ -33,13 +33,10 @@ function Tap(a,t)
 	end
 
 	function self.Check()
-
-	
-	
-		if (GestureLib_ArrayToString(self.gestures) ~= "[]" and self.minTime > 0) then
+		if (GestureLib_ArrayToString(self.gestures) ~= "[]") and (self.minTime > 0) then
 			self.timer = -(self.nowTime - (love.timer.getTime() * 1000));
 
-			if ((self.timer >= self.minTime) and (self.gestureCheck ~= GestureLib_ArrayToString(self.gestures))) then
+			if (self.timer >= self.minTime) and (self.gestureCheck ~= GestureLib_ArrayToString(self.gestures)) then
 				self.gesturing = false; 	
 				for k,v in pairs(self.gestures) do self.gestures[k]=nil end
 				self.gesturesBuffer = '';
@@ -47,7 +44,7 @@ function Tap(a,t)
 		end
 	
 	
-		if (self.gestureCheck ~= GestureLib_ArrayToString(self.gestures)) then 
+		if self.gestureCheck ~= GestureLib_ArrayToString(self.gestures) then 
 			return false; 
 		end 
 		
@@ -55,7 +52,7 @@ function Tap(a,t)
 	end
 
 	function self:update()	
-		if ( self.gestures[table.getn(self.gestures)] ~= self.gesturesBuffer) then
+		if self.gestures[table.getn(self.gestures)] ~= self.gesturesBuffer then
 			--[[Prevents from duplicate the same value
 				Last performed gesture must be other than last gesture at array, 
 				otherwise value from gesturesBuffer is not pushed to array--]]
