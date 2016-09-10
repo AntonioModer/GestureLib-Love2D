@@ -19,19 +19,19 @@ GestureLib port to love2D
 
 Require what you need.
 
-<h5>Swipe</h5>
+<h4>Swipe</h4>
 
 ```lua
 require "lib/GestureLib/Swipe"
 ```
 
-<h5>Long press</h5>
+<h4>Long press</h4>
 
 ```lua
 require "lib/GestureLib/LongPress"
 ```
 
-<h5>Tap</h5>
+<h4>Tap</h4>
 
 ```lua
 require "lib/GestureLib/Tap"
@@ -41,7 +41,7 @@ require "lib/GestureLib/Tap"
 
 Object declaration.
 
-<h5>Swipe</h5>
+<h4>Swipe</h4>
 
 ```lua
 Gesture_Swipe_N = Swipe('[TP,N,TR]', -1, 500);
@@ -50,7 +50,7 @@ Swipe(<b>g</b>, <b>d</b>, <b>t</b>)
 
 <b>g</b> - Gestures, <b>must</b> be in square bracket and without spaces!
 
-<h5>Gestures</h5>
+<h4>Gestures</h4>
 
  * TP - Touch Press
  * TR - Touch Release
@@ -67,7 +67,7 @@ Swipe(<b>g</b>, <b>d</b>, <b>t</b>)
 
 <b>t</b> - Minimal time to finish gesture. 
 
-<h5>Long press</h5>
+<h4>Long press</h4>
 
 ```lua
 Gesture_LongPress = LongPress(1000);
@@ -76,7 +76,7 @@ LongPress(<b>t</b>)
 
 <b>t</b> - Determine how long user must press.
 
-<h5>Tap</h5>
+<h4>Tap</h4>
 
 ```lua
 Gesture_MultipleTap = Tap(2,600);
@@ -131,3 +131,4 @@ end
 ```
 
 <hr>
+
