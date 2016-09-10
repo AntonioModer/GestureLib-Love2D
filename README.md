@@ -83,7 +83,7 @@ Gesture_MultipleTap = Tap(2,600);
 ```
 Tap(<b>a</b>, <b>t</b>)
 
-<b>A</b> - Amount of taps.
+<b>a</b> - Amount of taps.
 
 <b>t</b> - The time at Which user must to finish gesture. 
 
