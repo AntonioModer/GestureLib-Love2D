@@ -1,7 +1,5 @@
 <h1> GestureLib-Love2D </h1>
-GestureLib port to love2D
-
-
+GestureLib-Love2D is port of my Haxe gesture library to love2D.
 
 <h1>Features</h1>
  * Simple in use
