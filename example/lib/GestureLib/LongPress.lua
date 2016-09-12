@@ -4,6 +4,7 @@ require "lib/GestureLib/GestureLib"
 function LongPress(t,r)
 	--[[
 		@param	t	minimal time
+		@param	r	forces release touch to start gesture
 	]]--
 	local self = GestureLib();
 	
