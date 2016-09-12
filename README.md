@@ -46,7 +46,7 @@ Gesture_Swipe_N = Swipe('[TP,N,TR]', -1, 500);
 ```
 Swipe(<b>g</b>, <b>d</b>, <b>t</b>)
 
-<b>g</b> - Gestures, <b>must</b> be in square bracket and without spaces!
+<b>g</b> - Gestures, <b>must</b> be in square bracket and without spaces! E.g. <b>[TP,N,TR]</b>
 
 <h4>Gestures</h4>
 
