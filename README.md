@@ -68,11 +68,13 @@ Swipe(<b>g</b>, <b>d</b>, <b>t</b>)
 <h4>Long press</h4>
 
 ```lua
-Gesture_LongPress = LongPress(1000);
+Gesture_LongPress = LongPress(1000, false);
 ```
-LongPress(<b>t</b>)
+LongPress(<b>t</b>,<b>r</b>)
 
 <b>t</b> - Determine how long user must press.
+
+<b>r</b> - forces release touch to start gesture.
 
 <h4>Tap</h4>
 
