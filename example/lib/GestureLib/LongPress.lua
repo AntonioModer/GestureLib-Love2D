@@ -1,7 +1,7 @@
 require "lib/GestureLib/GestureLib"
 
 
-function LongPress(t)
+function LongPress(t,r)
 	--[[
 		@param	t	minimal time
 	]]--
@@ -11,7 +11,8 @@ function LongPress(t)
 	self.minTime = t;
 	self.count_instances = GestureLib_global_count_instances + 1;
 	GestureLib_global_count_instances = self.count_instances;
-
+	local Trelease = r;
+	
 	function self:Check()
 		if self.gestureCheck ~= GestureLib_ArrayToString(self.gestures) then 
 			return false; 
@@ -38,7 +39,9 @@ function LongPress(t)
 		if GestureLib_Dist(self.preMouse_X, GestureLib_Mouse_X, self.preMouse_Y, GestureLib_Mouse_Y) < (love.graphics.getWidth() + love.graphics.getHeight()) / 40 then
 				if self.timer >= self.minTime then
 					self.gesturesBuffer = 'LP';
-					self.gesturing = false;
+					if (Trelease == false) then
+						self.gesturing = false;
+					end
 				end
 			end
 		end

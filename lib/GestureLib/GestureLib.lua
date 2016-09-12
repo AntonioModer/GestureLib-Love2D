@@ -36,8 +36,10 @@ function GestureLib()
 	end
 
 	function self.mousereleased(x, y, button, istouch)
-		if (button == 1) and (self.gesturing == true) then		
-			self.gesturesBuffer = 'TR';
+		if (button == 1) then 
+			if (self.gesturing == true) then		
+				self.gesturesBuffer = 'TR';
+			end
 			self.gesturing = false;
 		end
 	end

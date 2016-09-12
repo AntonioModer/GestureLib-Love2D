@@ -7,7 +7,7 @@ function love.load()
 	Gesture_SwipeN = Swipe('[TP,N,TR]', -1, 500);
 	Gesture_SwipeS = Swipe('[TP,S,TR]', -1, 0);
 	Gesture_SwipeLDC = Swipe('[TP,S,E,TR]', -1, 800);
-	Gesture_LongPressGesture = LongPress(1000);
+	Gesture_LongPressGesture = LongPress(1000, false);
 	Gesture_DoubleTap = Tap(2,600);
 end
 
